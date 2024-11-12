@@ -1,0 +1,44 @@
+.navbar {
+    background-color: #CF385B;
+    height: 4rem;
+    width: 100vw;
+}
+
+img {
+    width: 15%;
+}
+
+.logo {
+    display: inline !important;
+    position: relative;
+    right: 39rem;
+    top: 1rem;
+}
+
+.logo:hover {
+    background: none !important;
+}
+
+.nav-buttons {
+    position: relative;
+    left: 67rem;
+    bottom: 1.35rem;
+}
+
+.nav-link {
+    color: #DEDAD7 !important;
+}
+
+.nav-link:hover {
+    background: none !important;
+}
+
+.account-icon {
+    position: relative;
+    left: 1rem;
+    color: #86f4ce;
+}
+
+.account-icon:hover {
+    cursor: pointer;
+}

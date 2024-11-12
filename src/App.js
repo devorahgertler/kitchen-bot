@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.css'
+import Navbar from './components/Navbar'
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import Homepage from './pages/Homepage'
+import Recipes from './pages/Recipes'
+import Tools from './pages/Tools'
+import Demos from './pages/Demos'
+import PageNotFound from './pages/PageNotFound'
+import LoginContext from './contexts/LoginContext'
+import { useState } from 'react'
 
 function App() {
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <LoginContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
+        <Navbar />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/tools" element={<Tools />} />
+            <Route path="/demos" element={<Demos />} />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </LoginContext.Provider>
     </div>
   );
 }

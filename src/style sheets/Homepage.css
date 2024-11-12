@@ -1,0 +1,29 @@
+.video-wrapper {
+    width: 100vw;
+    aspect-ratio: 16/9;
+    pointer-events: none;
+    z-index: -1;
+    position: absolute;
+    top: 0%;
+    opacity: 50%
+}
+
+.homepage-intro {
+    width: 40%;
+    height: 16rem;
+    background-color: #BFBDBA;
+    margin: auto;
+    margin-top: 7rem;
+    opacity: 85%;
+    outline: 6px dotted black;
+    outline-offset: -15px;
+    border-radius: 4px;
+    padding: 2rem;
+    font-family: "Margarine", sans-serif;
+}
+
+span {
+    font-family: "Oxanium", sans-serif;
+    font-weight: 600;
+    font-size: 45px;
+}
