@@ -1,19 +1,23 @@
+.homepage {
+    padding-bottom: 3rem;
+}
+
 .video-wrapper {
     width: 100vw;
     aspect-ratio: 16/9;
     pointer-events: none;
     z-index: -1;
     position: absolute;
-    top: 0%;
-    opacity: 50%
+    top: -24%;
+    opacity: 50%;
 }
 
 .homepage-intro {
     width: 40%;
-    height: 16rem;
+    height: 18rem;
     background-color: #BFBDBA;
     margin: auto;
-    margin-top: 7rem;
+    margin-top: 4rem;
     opacity: 85%;
     outline: 6px dotted black;
     outline-offset: -15px;
@@ -22,8 +26,94 @@
     font-family: "Margarine", sans-serif;
 }
 
-span {
+span,
+.homepage-intro-bottom {
     font-family: "Oxanium", sans-serif;
     font-weight: 600;
+}
+
+span {
     font-size: 45px;
 }
+
+.bot-icon {
+    margin-bottom: -3rem;
+}
+
+.homepage-intro-bottom {
+    font-size: 30px;
+}
+
+.homepage-middle {
+    background-color: pink;
+    border-radius: 50%;
+    width: 20rem;
+    height: 20rem;
+    margin: auto;
+    margin-top: 16rem;
+    margin-bottom: 7rem;
+    padding: 3%;
+    font-family: "Margarine", sans-serif;
+
+}
+
+h4 {
+    font-family: "Luckiest Guy", cursive;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 35px;
+    transform: rotate(-4deg);
+    margin-bottom: 1rem;
+}
+
+.hack {
+    font-family: "Lexend", sans-serif;
+    font-size: 21px;
+    font-weight: 350;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.card {
+    width: 17rem;
+    height: 10rem;
+    margin-left: 2rem;
+    padding: 1rem;
+    box-shadow: 2px 2px 3px rgb(52, 48, 48);
+}
+
+.box {
+    margin-top: 3rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+h2 {
+    text-align: left;
+    margin-left: 2rem;
+}
+
+.recipes-button {
+    background-image: url('../images/recipes.jpg');   
+}
+
+.tools-button {
+    background-image: url('../images/tools.jpg');
+}
+
+.demos-button {
+    background: url('../images/demos.jpg');
+}
+
+.card {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center;
+    font-weight: 800;
+    font-size: xx-large;
+    align-content: center;
+    color: indigo !important;
+    background-color: gray !important;
+}
+

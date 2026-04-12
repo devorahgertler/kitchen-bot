@@ -9,6 +9,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
+
 function Navbar() {
 
     const { isLoggedIn } = useContext(LoginContext)
@@ -25,7 +26,7 @@ function Navbar() {
 
     return (
         <div className='navbar'>
-            \            <Button className='logo' href="http://localhost:3000/">
+            <Button className='logo' href="http://localhost:3000/">
                 <img src={logo} alt="logo" />
             </Button>
             <Stack direction="row" spacing={2} className="nav-buttons">
