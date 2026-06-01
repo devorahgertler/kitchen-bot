@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Demos() {
+function Blogs() {
     return (
-        <div>Demos
+        <div>Blogs
         </div>
     )
 }
 
-export default Demos
+export default Blogs

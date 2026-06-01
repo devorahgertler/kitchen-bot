@@ -1,0 +1,21 @@
+.recipe-card {
+    width: 25% !important;
+    margin: 1.25rem;
+}
+
+.chip {
+    max-width: 15px;
+}
+
+.displayed-recipes {
+display: flex;
+flex-flow: row wrap;
+justify-content: center;
+}
+
+.drawer {
+    /* position: absolute;
+    z-index: -1;
+    margin-top: 10rem !important; */
+    width: 6rem !important;
+}

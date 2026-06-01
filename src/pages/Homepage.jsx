@@ -15,54 +15,45 @@ import CopyrightIcon from '@mui/icons-material/Copyright';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import Link from '@mui/material/Link';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import Terms from '../components/Terms';
+import Privacy from '../components/Privacy';
+import FAQ from '../components/FAQ';
 
 function Homepage() {
 
     const [hackOfTheDay, setHackOfTheDay] = useState('')
     const [numberHack, setNumberHack] = useState(0)
+    const [isTermsOpen, setIsTermsOpen] = useState(false)
+    const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false)
+    const [isFaqOpen, setIsFaqOpen] = useState(false)
 
     const navigate = useNavigate()
+    const seconds = useRef(null);
 
-    // const seconds = useRef(null);
-
-    // const rewind = () => {
-    //     seconds.current.seekTo(10);
-    // };
-    // onEnded={rewind}
-    // ref={seconds}
+    const handleProgress = (progress) => {
+            if (progress.playedSeconds >= 120) {
+                seconds.current.seekTo(10)
+            }
+    }
 
     const fetchHack = async () => {
-        const response = await fetch(`https://6981dcf3c9a606f5d4484951.mockapi.io/Hacks`)
+        const response = await fetch(`http://localhost:3001/hacks`)
         const data = await response.json()
-        setHackOfTheDay(data[numberHack].tip)
+        setHackOfTheDay(data[0].hack)
            }
 
-        //    useEffect (() => {
-        //     const currentHour = new Date().getHours()
-        //     if (currentHour === 24) {
-        //         setNumberHack((prev) => prev + 1)
-        //     } else {
-        //         setNumberHack((prev) => prev + 2)
-        //     }
-        //    }, [])
-
-        useEffect (() => {    
-            const interval = setInterval(() => {
-            setNumberHack((prev) => prev + 1);
-        }, 86400000);
-            return () => clearInterval(interval); 
-       }, []
-        )
-
-        useEffect(() => {
-            fetchHack()
-        }, [numberHack])
-
+    useEffect(() => {
+        fetchHack()
+    }, [])
+      
     return (
         <div className='homepage'>
             <div className='video-wrapper'>
                 <ReactPlayer url="https://www.youtube.com/embed/hrqdOMz-meo?si=NrDh3ZzJ5wYaYFaq&amp;controls=0&amp;start=10&end=120"
-                    playing={true} volume={0} muted={true} width="100%" height="100%" controls={false} />
+                    playing={true} ref={seconds} volume={0} muted={true} width="100%" height="100%" controls={false} loop={true} onProgress={handleProgress} progressInterval={500}/>
             </div>
             <div className="homepage-intro">
                 <h1> SPICE UP YOUR KITCHEN</h1>
@@ -78,9 +69,9 @@ function Homepage() {
             <div>
                 <h2>Explore recipes, guides, and more</h2>
             <Box className="box">
-                <Card variant="outlined" className="card recipes-button" href="http://localhost:3000/recipes">Recipes</Card>
-                <Card variant="outlined" className="card tools-button" href="http://localhost:3000/tools">Tools and Tips</Card>
-                <Card variant="outlined" className="card demos-button" href="http://localhost:3000/demos">Demos</Card>
+                <Card variant="outlined" className="card recipes-button" onClick={() => navigate('/recipes')}>Recipes</Card>
+                <Card variant="outlined" className="card tools-button" onClick={() => navigate('/tools')}>Tools and Tips</Card>
+                <Card variant="outlined" className="card blogs-button" onClick={() => navigate('/blogs')}>Blogs</Card>
             </Box>           
             </div>
             <div className="homepage-footer">
@@ -91,13 +82,29 @@ function Homepage() {
                     <p>2026. All rights reserved.</p>
                     </div>
                     <div>
+                    We'd love to hear from you! 
+                    support@kitchenbot.com
                     <YouTubeIcon />
                     <LinkedInIcon />
                     <FacebookIcon />
                     </div>   
                 </div>  
                 <div className="homepage-footer-right">
-                    
+                    <Link underline="hover" onClick={() => setIsTermsOpen(true)}>Terms & Conditions</Link>
+                        <Dialog open={isTermsOpen} onClose={() => setIsTermsOpen(false)}>
+                            <DialogTitle>Terms and Conditions</DialogTitle>
+                            <Terms />
+                        </Dialog>
+                    <Link underline="hover" onClick={() => setIsPrivacyPolicyOpen(true)}>Privacy Policy</Link>
+                            <Dialog open={isPrivacyPolicyOpen} onClose={() => setIsPrivacyPolicyOpen(false)}>
+                            <DialogTitle>Privacy Policy</DialogTitle>
+                            <Privacy />
+                        </Dialog>
+                    <Link underline="hover" onClick={() => setIsFaqOpen(true)}>FAQ</Link>
+                        <Dialog open={isFaqOpen} onClose={() => setIsFaqOpen(false)}>
+                            <DialogTitle>Frequently Asked Questions</DialogTitle>
+                            <FAQ />
+                        </Dialog>
                     </div> 
             </div>
         </div>

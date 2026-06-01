@@ -1,0 +1,8 @@
+.cooking-method {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+img {
+    object-fit: cover;
+}

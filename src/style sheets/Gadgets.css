@@ -1,0 +1,10 @@
+.gadget-card {
+    width: 20rem !important;
+    margin: 1.25rem;
+}
+
+.gadget-cards {
+    display: flex;
+    flex-flow: row wrap;
+    justify-self: center;
+}

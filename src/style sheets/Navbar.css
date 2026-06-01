@@ -1,7 +1,8 @@
 .navbar {
-    background-color: #CF385B;
-    height: 4.4rem;
-    width: 100vw;
+    background-color: #CF385B !important;
+    height: 4.4rem !important;
+    width: 100vw !important;
+    position: sticky !important;
 }
 
 img {
@@ -41,4 +42,12 @@ img {
 
 .account-icon:hover {
     cursor: pointer;
+}
+
+.paper-header {
+    color: magenta
+}
+
+.tools-menu {
+    position: absolute;
 }

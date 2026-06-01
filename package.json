@@ -12,18 +12,26 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^5.18.0",
     "@mui/material": "^5.18.0",
+    "@mui/x-charts": "^6.19.8",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "base": "^3.0.0",
+    "react": "^18.3.1",
     "react-app-rewired": "^2.2.1",
     "react-chatbotify": "^2.0.0-beta.23",
+    "react-dom": "^18.3.1",
     "react-is": "^18.3.1",
     "react-player": "^2.16.0",
     "react-router-dom": "^6.30.3",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "react-youtube": "^10.1.0",
+    "uuidv7": "^1.2.1",
     "web-vitals": "^2.1.4"
+  },
+  "overrides": {
+    "react-is": "^18.3.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,0 +1,15 @@
+.meat-doneness, .baked-goods-doneness {
+    width: 25%;
+}
+
+.meat-doneness {
+    position: fixed;
+    top: 0;
+    right: 0
+}
+
+.baked-goods-doneness {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
